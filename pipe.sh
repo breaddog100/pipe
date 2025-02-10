@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置版本号
-current_version=20250110005
+current_version=20250110006
 
 # Colors for output
 RED='\033[0;31m'
@@ -124,6 +124,7 @@ function view_logs(){
 # 查看状态
 function view_status(){
 	#sudo systemctl status pop
+    cd $HOME/pop/
     "$HOME/pop/pop" --status
 }
 
