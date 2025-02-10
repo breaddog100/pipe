@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置版本号
-current_version=20250110003
+current_version=20250110004
 
 # Colors for output
 RED='\033[0;31m'
@@ -145,9 +145,10 @@ function uninstall_node(){
     case "$response" in
         [yY][eE][sS]|[yY]) 
             echo "开始卸载节点程序..."
-            sudo systemctl stop pop
+            stop_node
 			rm -rf $HOME/pop
             sudo rm -f /etc/systemd/system/pop.service
+            sudo systemctl daemon-reload
 			echo "卸载完成。"
             ;;
         *)
