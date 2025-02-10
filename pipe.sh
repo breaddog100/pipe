@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置版本号
-current_version=20250110001
+current_version=20250110002
 
 # Colors for output
 RED='\033[0;31m'
@@ -112,7 +112,6 @@ EOF
     sudo systemctl daemon-reload
     sudo systemctl enable pop
     sudo systemctl start pop
-
 	echo "部署完成..."
 }
 
@@ -124,6 +123,7 @@ function view_logs(){
 # 查看状态
 function view_status(){
 	sudo systemctl status pop
+    "$HOME/pop/pop" --status
 }
 
 # 启动节点
