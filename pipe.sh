@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置版本号
-current_version=20250110004
+current_version=20250110005
 
 # Colors for output
 RED='\033[0;31m'
@@ -80,6 +80,7 @@ function install_node() {
     source ~/.bashrc
     "$HOME/pop/pop" --version
 
+    cd $HOME/pop/
     "$HOME/pop/pop" --signup-by-referral-route $REFERRAL
 
     sudo tee /etc/systemd/system/pop.service << EOF
@@ -122,7 +123,7 @@ function view_logs(){
 
 # 查看状态
 function view_status(){
-	sudo systemctl status pop
+	#sudo systemctl status pop
     "$HOME/pop/pop" --status
 }
 
