@@ -1,0 +1,1 @@
+wget -O pipe.sh https://raw.githubusercontent.com/breaddog100/pipe/main/pipe.sh && chmod +x pipe.sh && ./pipe.sh
